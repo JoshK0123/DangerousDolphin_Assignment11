@@ -14,11 +14,18 @@
 # Bill Nicholson
 # nicholdw@ucmail.uc.edu
 
-
+from dataAnomaliesPackage.dataAnomalies import *
 from CSVPackage.CSVProcessor import *
 
 if __name__ == "__main__":
-    print("main.py")
-    myCSVProcessor = CSVProcessor("Data/fuelPurchaseData.csv")
-    myCSVProcessor.process()
-    print(myCSVProcessor.readData())
+# Paths to the CSV files
+    input_file = 'Data/fuelPurchaseData.csv'
+    anomalies_file = 'Data/dataAnomalies.csv'
+
+    # Process the CSV
+    processor = CSVProcessor(input_file)
+
+    # Remove anomalies
+    remover = RemoveAnomaliesInColumn(processor)
+    remover.filter_anomalies(anomalies_file)
+    

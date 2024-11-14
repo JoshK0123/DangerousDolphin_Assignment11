@@ -24,7 +24,12 @@ class CSVProcessor:
     def process(self):
         print("Processing", self.__filename)
         data = self.readData()
-
+        return data
     def readData(self):
-        return None
-        
+        data = []
+        with open(self.__filename, 'r') as csvfile:
+            csvreader = csv.reader(csvfile)
+            for row in csvreader:
+                data.append(row)
+        return data
+
