@@ -31,11 +31,18 @@
     <Compile Include="mainPackage\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="RemovingDecimalsandDuplicatesPackage\RemovingDecimalsandDuplicates.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RemovingDecimalsandDuplicatesPackage\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CSVPackage\" />
     <Folder Include="mainPackage\" />
     <Folder Include="Data\" />
+    <Folder Include="RemovingDecimalsandDuplicatesPackage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\fuelPurchaseData.csv" />
