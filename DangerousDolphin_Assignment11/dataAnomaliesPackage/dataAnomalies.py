@@ -45,15 +45,7 @@ class RemoveAnomaliesInColumn:
             for row in rows:
                 if row[5].lower() == 'pepsi':  # Assuming 'fuel type' is the 5th column
                     writer.writerow(row)
-                else:
-                    cleaned_data.append(row)
         
-        # Optionally, save cleaned data to a new file
-        cleaned_file = 'Data/cleaned_data.csv'
-        with open(cleaned_file, 'w', newline='') as cleanedfile:
-            writer = csv.writer(cleanedfile)
-            writer.writerows(cleaned_data)
-
     def __str__(self):
         """
         @return String: A human-readable basic representation of the current object. 
