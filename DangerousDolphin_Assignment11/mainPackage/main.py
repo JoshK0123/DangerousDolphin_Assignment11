@@ -13,7 +13,7 @@
 # main.py
 # Bill Nicholson
 # nicholdw@ucmail.uc.edu
-
+from RemovingDecimalsandDuplicatesPackage.RemovingDecimalsandDuplicates import *
 from dataAnomaliesPackage.dataAnomalies import *
 from CSVPackage.CSVProcessor import *
 
@@ -25,7 +25,11 @@ if __name__ == "__main__":
     # Process the CSV
     processor = CSVProcessor(input_file)
 
+    # Remove decimals and duplicates
+    decimalRemover = RemovingDecimalsandDuplicates(processor)
+
     # Remove anomalies
     remover = RemoveAnomaliesInColumn(processor)
     remover.filter_anomalies(anomalies_file)
+
     
