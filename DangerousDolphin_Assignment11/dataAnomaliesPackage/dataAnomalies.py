@@ -11,7 +11,6 @@
 # Citations:
 # Anything else that's relevant: Using (allowed) AI, Copilot
 
-# dataAnomalies/filter_anomalies.py
 import csv
 from CSVPackage.CSVProcessor import CSVProcessor
 
@@ -22,18 +21,14 @@ class RemoveAnomaliesInColumn:
     def __init__(self, csv_processor):
         """
         Constructor
-        
-        Args:
-            csv_processor (CSVProcessor): An instance of the CSVProcessor class.
+        @param csv_processor (CSVProcessor): An instance of the CSVProcessor class.
         """
         self.csv_processor = csv_processor
 
     def filter_anomalies(self, anomalies_file):
         """
         Filters out rows where 'fuel type' is 'Pepsi'.
-        
-        Args:
-            anomalies_file (str): The path to save the anomalies CSV file.
+        @param anomalies_file String: The CSV file that will save the data anomalies.
         """
         data = self.csv_processor.process()
         header = data[0]
@@ -43,7 +38,7 @@ class RemoveAnomaliesInColumn:
             writer = csv.writer(anomaliesfile)
             writer.writerow(header)
             
-            cleaned_data = [header]  # Keep the header in the cleaned data
+            same_header = [header]  # Keep the same header as the input_file
             for row in rows:
                 if row[5].lower() == 'pepsi':  # Assuming 'fuel type' is the 5th column
                     writer.writerow(row)
