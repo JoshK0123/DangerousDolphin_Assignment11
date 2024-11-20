@@ -5,7 +5,9 @@
 # Course #/Section:   IS4010 001
 # Semester/Year:   Fall 2024
 # Brief Description of the assignment:   Clean a csv file, store it in a new place.
-# Brief Description of what this module does. What this module does is that it's a class, and inside this class is a function that filters anomalies, in this case it's filtering pepsi out of the fuel type column. It then writes the rows with pepsi as fuel type into a new csv caled dataAnomalies and gets stored in the Data folder. 
+# Brief Description of what this module does: This is a class, and inside this class is a function that filters anomalies, 
+# in this case it's filtering pepsi out of the fuel type column. It then writes the rows with pepsi as fuel type into a new 
+# csv caled dataAnomalies and gets stored in the Data folder. 
 # Citations:
 # Anything else that's relevant: Using (allowed) AI, Copilot
 

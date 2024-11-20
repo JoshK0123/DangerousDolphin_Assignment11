@@ -16,9 +16,10 @@
 
 from dataAnomaliesPackage.dataAnomalies import *
 from CSVPackage.CSVProcessor import *
+from apiPackage.api import *
 
 if __name__ == "__main__":
-# Paths to the CSV files
+    # Paths to the CSV files
     input_file = 'Data/fuelPurchaseData.csv'
     anomalies_file = 'Data/dataAnomalies.csv'
 
@@ -28,4 +29,9 @@ if __name__ == "__main__":
     # Remove anomalies
     remover = RemoveAnomaliesInColumn(processor)
     remover.filter_anomalies(anomalies_file)
-    
+
+    # API Server Acces
+    apiWaiter.submitToServer()
+    zipCodes = apiWaiter.loadJSONtoDict(apiWaiter.submitToServer())
+    fetchedZipCode = (zipCodes['results'][0])
+

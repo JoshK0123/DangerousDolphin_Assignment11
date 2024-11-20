@@ -6,7 +6,7 @@
 # Semester/Year:   Fall 2024
 # Brief Description of the assignment:  Clean a csv file, store it in a new place.
 
-# Brief Description of what this module does. {Do not copy/paste from a previous assignment. Put some thought into this. required}
+# Brief Description of what this module does. Reads CSV file and returns data
 # Citations:
 # Anything else that's relevant: Using (allowed) AI
 
