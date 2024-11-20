@@ -47,6 +47,7 @@
     <Folder Include="dataAnomaliesPackage\" />
     <Folder Include="mainPackage\" />
     <Folder Include="Data\" />
+    <Folder Include="RemovingDecimalsandDuplicatesPackage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\dataAnomalies.csv" />
