@@ -38,4 +38,5 @@ if __name__ == "__main__":
     apiWaiter.submitToServer()
     zipCodes = apiWaiter.loadJSONtoDict(apiWaiter.submitToServer())
     fetchedZipCode = (zipCodes['results'][0])
+    print(fetchedZipCode)
 

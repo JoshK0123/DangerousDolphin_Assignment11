@@ -22,7 +22,7 @@ class apiWaiter:
         
         return apiResults
 
-    def loadJSONtoDict(self, jsonResponse):
+    def loadJSONtoDict(jsonResponse):
         """
         Loads JSON data into a dictionary
         @param jsonResponse: the JSON data
