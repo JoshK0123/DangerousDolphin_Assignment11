@@ -16,7 +16,7 @@ class apiWaiter:
         @return: the json results
         """
         
-        response = requests.get("https://app.zipcodebase.com/api/v1/code/city?apikey=a0f42fd0-a762-11ef-8709-97910ef36bb5&city=Amsterdam&state_name=Noord-Holland&country=nl&limit=1")
+        response = requests.get("https://app.zipcodebase.com/api/v1/code/city?apikey=a0f42fd0-a762-11ef-8709-97910ef36bb5&city=Cincinnati&state_name=OH&country=us&limit=1")
 
         apiResults = response.content
         
