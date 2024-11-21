@@ -40,6 +40,12 @@
     </Compile>
     <Compile Include="apiPackage\api.py" />
     <Compile Include="apiPackage\__init__.py" />
+    <Compile Include="RemovingDecimalsandDuplicatesPackage\DecimalsandDuplicates.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RemovingDecimalsandDuplicatesPackage\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="apiPackage\" />
