@@ -86,5 +86,5 @@ class RemovingDecimalsandDuplicates:
 # Example usage:
 csv_processor = RemovingDecimalsandDuplicates(None)
 input_file = 'input.csv'
-output_file = 'cleanedData.csv'
+output_file = 'Data/cleanedData.csv'
 
