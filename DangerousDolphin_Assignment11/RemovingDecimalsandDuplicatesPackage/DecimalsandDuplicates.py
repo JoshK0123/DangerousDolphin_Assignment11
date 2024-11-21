@@ -13,6 +13,8 @@ from mainPackage.main import *
 import csv 
 from CSVPackage.CSVProcessor import *
 
+import csv
+
 class RemovingDecimalsandDuplicates:
 
     def __init__(self, csv_processor):
@@ -21,63 +23,68 @@ class RemovingDecimalsandDuplicates:
         @param: csv_processor (CSVProcessor): An instance of the CSVProcessor class
         """
         self.csv_processor = csv_processor
-     
-def round_second_column_to_two_decimal_places(input_file):
-    """
-    Rounds numeric values in the 2nd column of a CSV file to 2 decimal places and updates the file.
-    @param: input_file (str): Path to the input CSV file.
-    @returns: list: List of rows with the 'Gross Price' column values rounded to 2 decimal places.
-    """
-    cleaned_data = []
 
-    with open(input_file, 'r') as infile:
-        reader = csv.reader(infile)
-        header = next(reader)
+    def round_second_column_to_two_decimal_places(self, input_file, output_file):
+        """
+        Rounds numeric values in the 2nd column of a CSV file to 2 decimal places and writes to an output file.
+        @param: input_file (str): Path to the input CSV file.
+        @param: output_file (str): Path to the output CSV file.
+        """
+        cleaned_data = []
+
+        with open(input_file, 'r') as infile:
+            reader = csv.reader(infile)
+            header = next(reader)
+            
+            # Add the header to cleaned_data
+            cleaned_data.append(header)
+
+            for row in reader:
+                try:
+                    # Assuming the 2nd column is index 1
+                    row[2] = f"${float(row[2]):.2f}"
+                except (ValueError, IndexError):
+                    pass  # Skip rows where the conversion fails
+                cleaned_data.append(row)
         
-        # Add the header to cleaned_data
-        cleaned_data.append(header)
+        # Write the cleaned data to the output CSV file
+        with open(output_file, 'w', newline='') as outfile:
+            writer = csv.writer(outfile)
+            writer.writerows(cleaned_data)
+            
+        print(f"Data has been updated with 2nd column values rounded to two decimal places and saved to {output_file}.")
 
-        for row in reader:
-            try:
-                # Assuming the 2nd column is index 1
-                row[2] = f"${float(row[2]):.2f}"
-            except (ValueError, IndexError):
-                pass  # Skip rows where the conversion fails
-            cleaned_data.append(row)
-    
-    # Write the cleaned data back to the same CSV file
-    with open(input_file, 'w', newline='') as outfile:
-        writer = csv.writer(outfile)
-        writer.writerows(cleaned_data)
+    def delete_duplicate_rows(self, input_file, output_file):
+        """
+        Removes duplicate rows from a CSV file and writes to an output file.
+        @param: input_file (str): Path to the input CSV file.
+        @param: output_file (str): Path to the output CSV file.
+        """
+        unique_data = []
+        seen = set()
+
+        with open(input_file, 'r') as infile:
+            reader = csv.reader(infile)
+            header = next(reader)
+            
+            # Add the header to unique_data
+            unique_data.append(header)
+
+            for row in reader:
+                row_tuple = tuple(row)
+                if row_tuple not in seen:
+                    seen.add(row_tuple)
+                    unique_data.append(row)
         
-    print(f"Data in {input_file} has been updated with 2nd column values rounded to two decimal places.")
+        # Write the cleaned data to the output CSV file
+        with open(output_file, 'w', newline='') as outfile:
+            writer = csv.writer(outfile)
+            writer.writerows(unique_data)
+            
+        print(f"Duplicate rows removed and data saved to {output_file}.")
 
-def delete_duplicate_rows(input_file):
-    """
-    Removes duplicate rows from a CSV file and updates the file.
-    @param: input_file (str): Path to the input CSV file.
-    """
-    unique_data = []
-    seen = set()
-
-    with open(input_file, 'r') as infile:
-        reader = csv.reader(infile)
-        header = next(reader)
-        
-        # Add the header to unique_data
-        unique_data.append(header)
-
-        for row in reader:
-            row_tuple = tuple(row)
-            if row_tuple not in seen:
-                seen.add(row_tuple)
-                unique_data.append(row)
-    
-    # Write the cleaned data back to the same CSV file
-    with open(input_file, 'w', newline='') as outfile:
-        writer = csv.writer(outfile)
-        writer.writerows(unique_data)
-        
-    print(f"Duplicate rows removed and {input_file} has been updated.")
-
+# Example usage:
+csv_processor = RemovingDecimalsandDuplicates(None)
+input_file = 'input.csv'
+output_file = 'cleanedData.csv'
 
