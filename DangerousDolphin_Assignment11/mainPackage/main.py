@@ -35,9 +35,9 @@ if __name__ == "__main__":
     remover = RemoveAnomaliesInColumn(processor)
     remover.filter_anomalies(anomalies_file)
 
-    # API Server Acces
-    apiWaiter.submitToServer()
-    zipCodes = apiWaiter.loadJSONtoDict(apiWaiter.submitToServer())
-    fetchedZipCode = (zipCodes['results'][0])
-    print(fetchedZipCode)
+    # API Server Access
+    cityDict = apiWaiter.addCitytoDict()
+    apiWaiter.loadCityDict(cityDict)
+    apiWaiter.loadZipsToCSV()
+
 
