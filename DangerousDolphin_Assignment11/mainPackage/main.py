@@ -28,8 +28,8 @@ if __name__ == "__main__":
     processor = CSVProcessor(input_file)
 
     # Remove decimals and duplicates
-    round_second_column_to_two_decimal_places(input_file)
-    delete_duplicate_rows(input_file)
+    csv_processor.round_second_column_to_two_decimal_places(input_file, output_file)
+    csv_processor.delete_duplicate_rows(input_file, output_file)
 
     # Remove anomalies
     remover = RemoveAnomaliesInColumn(processor)
