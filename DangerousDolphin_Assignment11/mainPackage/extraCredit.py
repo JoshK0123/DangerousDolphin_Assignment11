@@ -28,4 +28,5 @@
             # The Site IDs should be the type of value for easier understanding, whether text or numbers.
             #
             # There is some confusing ways of different spelling in address column.
-            # For example, parkway is spelled as either parkway, pkwy, parkwy, 
+            # For example, parkway is spelled as either parkway, pkwy, parkwy
+            # The addresses are also sometimes in the order of zip code, state, address line instead of the opposite and correct way

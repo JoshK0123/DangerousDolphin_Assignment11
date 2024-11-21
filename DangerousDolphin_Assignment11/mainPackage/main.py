@@ -4,7 +4,7 @@
 # Due Date:   11/21/24
 # Course #/Section:   IS4010 001
 # Semester/Year:   Fall 2024
-# Brief Description of the assignment:  Clean a csv file, store it in a new place.
+# Brief Description of the assignment:  Clean a csv file, store it in a new location
 
 # Brief Description of what this module does. {Do not copy/paste from a previous assignment. Put some thought into this. required}
 # Citations:
@@ -13,6 +13,7 @@
 # main.py
 # Bill Nicholson
 # nicholdw@ucmail.uc.edu
+
 from RemovingDecimalsandDuplicatesPackage.DecimalsandDuplicates import *
 from dataAnomaliesPackage.dataAnomalies import *
 from CSVPackage.CSVProcessor import *
